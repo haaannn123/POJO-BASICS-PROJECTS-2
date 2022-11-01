@@ -26,9 +26,23 @@ let peeps = [
 ];
 console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 ***********************************************************************/
-
+// return an object with total scores
+// iterate through the array to get objects
+// grab the key(person) + grab the value (score)
+// check if object exists if it doesn't add it plus the score
 function countScores(people) {
-  
+  let obj = {}
+for (let i in people){
+  let person = Object.values(people[i])[0]// this gives me the value of at index 0; // Anthony, Fred, Anthony, Winnie
+  let score = Object.values(people[i])[1] // THIS IS NOT WORKING
+  if (obj[person] === undefined){
+    obj[person] = score
+  } else {
+    obj[person] += score
+  }
+}
+// console.log(obj)
+return obj
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
